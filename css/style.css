@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(231, 229, 229);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.user-card {
+  background-color: white;
+  margin: 30px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 25px 0 50px;
+  flex-basis: 600px;
+  flex-shrink: 1;
+
+  /* тут не задано висоти у відносних величинах, тому що тоді при обмеженні у висоті параграфів в картках, кнопки в різних картках займали різне положення і використання margin-bottom: auto не допомогало це виправити. Чи в такому випадку краще використовувати для висоти використовувати px? 
+  замість того, я дала flex-basis і flex-shrink щоб картка не сильно сплющувалася при звужуванні, а висоту фактично задала paddings. Чи можна так взагалі робити?*/
+}
+
+.general-photo {
+  margin: -50px 15px 0px;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgb(242, 242, 247);
+  box-shadow: 2px 4px 2px rgb(197, 192, 192);
+}
+
+.user-info {
+  height: 70%;
+  margin: -55px 15px 0px;
+  padding: 10px;
+}
+
+.user-name {
+  font-size: 26px;
+  line-height: 50px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.general-btn {
+  color: white;
+  width: 6em;
+  height: 2.5em;
+  background-color: rgb(0, 132, 255);
+  border-radius: 6px;
+  margin: 5px;
+}
+
+.user-story {
+  max-height: 40px;
+  height: 40px;
+  overflow: auto;
+  /* в мене не виходило зробити так щоб при звужуванні екрану параграфи не залізали на інший контент. Тоді треба було не задавати висоти, але без того я не могла зробити щоб контент в різних картках знаходився на одному рівні при різних розмірах параграфів, тому я дала overflow:auto */
+}
+
+.icons {
+  margin: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 16px;
+  color: rgb(219, 104, 10);
+}
